@@ -116,7 +116,7 @@ public class Image2Code {
             int i=0,max=buf.getSize();
             while(i < max) {
             	for(int j=0;j<byteWidth;++j) {
-            		str.append("0x"+Integer.toString(buf.getElem(i++),16)+(i != max ?",":""));
+            		str.append("0x"+Integer.toString((~buf.getElem(i++)&0xff),16)+(i != max ?",":""));
             	}
             	str.append("\n");
     		}
